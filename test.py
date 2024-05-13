@@ -23,3 +23,12 @@ def caesar_decrypt(encrypted_text, shift):
         else:
             decrypted_text += char
     return decrypted_text
+
+def vigenere_encrypt(text, key):
+    result = ""
+    key_index = 0
+    for char in text:
+        if char.isalpha():
+            shift = ord(key[key_index].upper()) - 65
+            if char.isupper():
+                result += chr((ord(char) - 65 + shift) % 26 + 65)
