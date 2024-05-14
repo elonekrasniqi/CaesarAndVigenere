@@ -43,7 +43,14 @@ def vigenere_encrypt(text, key):
         else:
             result += char
     return result
-
+def vigenere_decrypt(text, key):
+    result = ""
+    key_index = 0
+    for char in text:
+        if char.isalpha():
+            shift = ord(key[key_index].upper()) - 65
+            if char.isupper():
+                result += chr((ord(char) - 65 - shift + 26) % 26 + 65)
 
 
 
