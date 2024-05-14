@@ -99,9 +99,22 @@ def select_operation(algorithm):
     elif algorithm == "Vigenere":
         key = tk.simpledialog.askstring("Key", "Enter the encryption key:")
 
-        
+
         if key is None:
             messagebox.showerror("Error", "No key entered.")
             return
+        
 
+        if operation == "encrypt":
+            with open(file_path, "r") as file:
+                input_text = file.read()
+            output_text = vigenere_encrypt(input_text, key)
+            output_file_path = os.path.join(save_path, "vigenere_encrypted.txt")
+
+        else:
+            
+            with open(file_path, "r") as file:
+                input_text = file.read()
+            output_text = vigenere_decrypt(input_text, key)
+            output_file_path = os.path.join(save_path, "vigenere_decrypted.txt")
         
