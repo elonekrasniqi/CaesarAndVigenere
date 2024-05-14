@@ -136,4 +136,10 @@ def main():
 
     algorithm_label = tk.Label(main_frame, text="Select an Algorithm:", font=("Arial", 12, "bold"))
     algorithm_label.grid(row=0, columnspan=2, pady=5)
+
+    caesar_button = tk.Button(main_frame, text="Caesar", command=partial(select_operation, "Caesar"), bg="blue", fg="white", font=("Arial", 12, "bold"))
+    caesar_button.grid(row=1, column=0, padx=5, pady=5)
+
+    vigenere_button = tk.Button(main_frame, text="Vigenere", command=partial(select_operation, "Vigenere"), bg="green", fg="white", font=("Arial", 12, "bold"))
+    vigenere_button.grid(row=1, column=1, padx=5, pady=5)
         
