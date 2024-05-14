@@ -112,9 +112,18 @@ def select_operation(algorithm):
             output_file_path = os.path.join(save_path, "vigenere_encrypted.txt")
 
         else:
-            
+
             with open(file_path, "r") as file:
                 input_text = file.read()
             output_text = vigenere_decrypt(input_text, key)
             output_file_path = os.path.join(save_path, "vigenere_decrypted.txt")
+
+    else:
+        messagebox.showerror("Error", "Invalid algorithm.")
+        return
+
+    with open(output_file_path, "w") as file:
+        file.write(output_text)
+
+    messagebox.showinfo("Success", f"File {operation}ed successfully.")
         
