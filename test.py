@@ -126,4 +126,14 @@ def select_operation(algorithm):
         file.write(output_text)
 
     messagebox.showinfo("Success", f"File {operation}ed successfully.")
+
+def main():
+    root = tk.Tk()
+    root.title("Cipher")
+
+    main_frame = tk.Frame(root)
+    main_frame.pack(padx=10, pady=10)
+
+    algorithm_label = tk.Label(main_frame, text="Select an Algorithm:", font=("Arial", 12, "bold"))
+    algorithm_label.grid(row=0, columnspan=2, pady=5)
         
