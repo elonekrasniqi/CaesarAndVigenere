@@ -1,3 +1,8 @@
+import tkinter as tk
+from tkinter import filedialog
+from tkinter import messagebox
+from functools import partial
+import os
 
 
 def caesar_encrypt(input_text, shift):
@@ -32,9 +37,54 @@ def vigenere_encrypt(text, key):
             shift = ord(key[key_index].upper()) - 65
             if char.isupper():
                 result += chr((ord(char) - 65 + shift) % 26 + 65)
-                  else:
+            else:
                 result += chr((ord(char) - 97 + shift) % 26 + 97)
             key_index = (key_index + 1) % len(key)
-               else:
+        else:
             result += char
     return result
+
+
+
+
+
+
+
+
+
+
+def select_operation(algorithm):
+    root = tk.Tk()
+    root.withdraw()  # Hide the main window
+
+    operation = tk.simpledialog.askstring("Operation", "Enter 'encrypt' or 'decrypt':")
+    if operation not in ['encrypt', 'decrypt']:
+        messagebox.showerror("Error", "Invalid operation.")
+        return
+
+    file_path = filedialog.askopenfilename(filetypes=[("Text files", "*.txt")])
+    if not file_path:
+        messagebox.showerror("Error", "No file selected.")
+        return
+
+    save_path = filedialog.askdirectory(title="Select Save Location")
+    if not save_path:
+        messagebox.showerror("Error", "No save location selected.")
+        return
+
+    if algorithm == "Caesar":
+        shift = tk.simpledialog.askinteger("Shift Value", "Enter the shift value:")
+        if shift is None:
+            messagebox.showerror("Error", "No shift value entered.")
+            return
+
+        if operation == "encrypt":
+            with open(file_path, "r") as file:
+                input_text = file.read()
+            output_text = caesar_encrypt(input_text, shift)
+            output_file_path = os.path.join(save_path, "caesar_encrypted.txt")
+        else:
+            with open(file_path, "r") as file:
+                input_text = file.read()
+            output_text = caesar_decrypt(input_text, shift)
+            output_file_path = os.path.join(save_path, "caesar_decrypted.txt")
