@@ -95,3 +95,13 @@ def select_operation(algorithm):
                 input_text = file.read()
             output_text = caesar_decrypt(input_text, shift)
             output_file_path = os.path.join(save_path, "caesar_decrypted.txt")
+
+    elif algorithm == "Vigenere":
+        key = tk.simpledialog.askstring("Key", "Enter the encryption key:")
+
+        
+        if key is None:
+            messagebox.showerror("Error", "No key entered.")
+            return
+
+        
