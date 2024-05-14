@@ -32,3 +32,6 @@ def vigenere_encrypt(text, key):
             shift = ord(key[key_index].upper()) - 65
             if char.isupper():
                 result += chr((ord(char) - 65 + shift) % 26 + 65)
+                  else:
+                result += chr((ord(char) - 97 + shift) % 26 + 97)
+            key_index = (key_index + 1) % len(key)
