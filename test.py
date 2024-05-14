@@ -142,4 +142,9 @@ def main():
 
     vigenere_button = tk.Button(main_frame, text="Vigenere", command=partial(select_operation, "Vigenere"), bg="green", fg="white", font=("Arial", 12, "bold"))
     vigenere_button.grid(row=1, column=1, padx=5, pady=5)
+
+    root.mainloop()
+
+if __name__ == "__main__":
+    main()
         
