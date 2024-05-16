@@ -3,6 +3,7 @@ from tkinter import filedialog
 from tkinter import messagebox
 from functools import partial
 import os
+import docx
 
 
 def caesar_encrypt(input_text, shift):
@@ -68,7 +69,7 @@ def select_operation(algorithm):
         messagebox.showerror("Error", "Invalid operation.")
         return
 
-    file_path = filedialog.askopenfilename(filetypes=[("Text files", "*.txt")])
+    file_path = filedialog.askopenfilename(filetypes=[("Text files", "*.txt"), ("Word files", "*.docx")])
     if not file_path:
         messagebox.showerror("Error", "No file selected.")
         return
@@ -85,44 +86,72 @@ def select_operation(algorithm):
             return
 
         if operation == "encrypt":
-            with open(file_path, "r") as file:
-                input_text = file.read()
-            output_text = caesar_encrypt(input_text, shift)
-            output_file_path = os.path.join(save_path, "caesar_encrypted.txt")
+            if file_path.endswith('.txt'):
+                with open(file_path, "r") as file:
+                    input_text = file.read()
+                output_text = caesar_encrypt(input_text, shift)
+                output_file_name = os.path.splitext(os.path.basename(file_path))[0] + "_caesar_encrypted.txt"
+            elif file_path.endswith('.docx'):
+                doc = docx.Document(file_path)
+                input_text = '\n'.join([paragraph.text for paragraph in doc.paragraphs])
+                output_text = caesar_encrypt(input_text, shift)
+                output_file_name = os.path.splitext(os.path.basename(file_path))[0] + "_caesar_encrypted.docx"
         else:
-            with open(file_path, "r") as file:
-                input_text = file.read()
-            output_text = caesar_decrypt(input_text, shift)
-            output_file_path = os.path.join(save_path, "caesar_decrypted.txt")
+            if file_path.endswith('.txt'):
+                with open(file_path, "r") as file:
+                    input_text = file.read()
+                output_text = caesar_decrypt(input_text, shift)
+                output_file_name = os.path.splitext(os.path.basename(file_path))[0] + "_caesar_decrypted.txt"
+            elif file_path.endswith('.docx'):
+                doc = docx.Document(file_path)
+                input_text = '\n'.join([paragraph.text for paragraph in doc.paragraphs])
+                output_text = caesar_decrypt(input_text, shift)
+                output_file_name = os.path.splitext(os.path.basename(file_path))[0] + "_caesar_decrypted.docx"
 
     elif algorithm == "Vigenere":
         key = tk.simpledialog.askstring("Key", "Enter the encryption key:")
-
 
         if key is None:
             messagebox.showerror("Error", "No key entered.")
             return
         
-
         if operation == "encrypt":
-            with open(file_path, "r") as file:
-                input_text = file.read()
-            output_text = vigenere_encrypt(input_text, key)
-            output_file_path = os.path.join(save_path, "vigenere_encrypted.txt")
+            if file_path.endswith('.txt'):
+                with open(file_path, "r") as file:
+                    input_text = file.read()
+                output_text = vigenere_encrypt(input_text, key)
+                output_file_name = os.path.splitext(os.path.basename(file_path))[0] + "_vigenere_encrypted.txt"
+            elif file_path.endswith('.docx'):
+                doc = docx.Document(file_path)
+                input_text = '\n'.join([paragraph.text for paragraph in doc.paragraphs])
+                output_text = vigenere_encrypt(input_text, key)
+                output_file_name = os.path.splitext(os.path.basename(file_path))[0] + "_vigenere_encrypted.docx"
 
         else:
-
-            with open(file_path, "r") as file:
-                input_text = file.read()
-            output_text = vigenere_decrypt(input_text, key)
-            output_file_path = os.path.join(save_path, "vigenere_decrypted.txt")
+            if file_path.endswith('.txt'):
+                with open(file_path, "r") as file:
+                    input_text = file.read()
+                output_text = vigenere_decrypt(input_text, key)
+                output_file_name = os.path.splitext(os.path.basename(file_path))[0] + "_vigenere_decrypted.txt"
+            elif file_path.endswith('.docx'):
+                doc = docx.Document(file_path)
+                input_text = '\n'.join([paragraph.text for paragraph in doc.paragraphs])
+                output_text = vigenere_decrypt(input_text, key)
+                output_file_name = os.path.splitext(os.path.basename(file_path))[0] + "_vigenere_decrypted.docx"
 
     else:
         messagebox.showerror("Error", "Invalid algorithm.")
         return
 
-    with open(output_file_path, "w") as file:
-        file.write(output_text)
+    output_file_path = os.path.join(save_path, output_file_name)
+    
+    if output_file_path.endswith('.docx'):
+        doc = docx.Document()
+        doc.add_paragraph(output_text)
+        doc.save(output_file_path)
+    else:
+        with open(output_file_path, "w") as file:
+            file.write(output_text)
 
     messagebox.showinfo("Success", f"File {operation}ed successfully.")
 
@@ -146,4 +175,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-        
