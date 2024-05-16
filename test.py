@@ -54,6 +54,9 @@ def vigenere_decrypt(text, key):
                 else:
                 result += chr((ord(char) - 97 - shift + 26) % 26 + 97)
             key_index = (key_index + 1) % len(key)
+             else:
+            result += char
+    return result
 
 
 
