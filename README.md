@@ -12,11 +12,14 @@ This Python application provides a user-friendly interface for encrypting and de
 1. The user selects the Vigenère or Caesar option.
 2. They enter whether they want to encrypt or decrypt a file.
 3. They provide the file to be encrypted/decrypted.
-4. They specify the encryption key.
-5. The program performs the encryption/decryption and saves the result to a new file.
+4. They select where do they want to save the encrypted/decrypted file.
+5. They specify the encryption key.
+6. The program performs the encryption/decryption and saves the result to a new file.
 
 ### How to Use
-- Clone this repository to your local machine.
+- **Clone this repository to your local machine.**
+  ```bash
+   git clone https://github.com/elonekrasniqi/CaesarAndVigenere.git
 - Make sure you have Python installed.
 - Install the required dependencies by running `pip install -r requirements.txt.`
 - Run the main.py file.
