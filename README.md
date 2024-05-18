@@ -24,8 +24,16 @@ This Python application provides a user-friendly interface for encrypting and de
 - Install the required dependencies by running `pip install -r requirements.txt.`
 - Run the main.py file.
 
-###Graphical User Interface (GUI)
-The application uses tkinter for the GUI, allowing users to easily select options and input necessary information through dialog boxes.                                                                                                                                                                                                                  
+### Graphical User Interface (GUI)
+The application uses tkinter for the GUI, allowing users to easily select options and input necessary information through dialog boxes.  
+
+### Operation Dialogs
+Operation Selection: Users are prompted to enter whether they want to "encrypt" or "decrypt".
+File Selection: Users can browse and select the file to be processed.
+Save Location: Users can choose the directory to save the processed file.
+Key/Shift Input:
+For Caesar cipher: Users are prompted to enter the shift value.
+For Vigenère cipher: Users are prompted to enter the encryption key.     
 
 ### Contributors:
 - [Elma Shabani](https://github.com/ElmaShabani)
