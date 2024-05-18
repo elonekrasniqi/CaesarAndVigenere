@@ -28,13 +28,20 @@ This Python application provides a user-friendly interface for encrypting and de
 The application uses tkinter for the GUI, allowing users to easily select options and input necessary information through dialog boxes.  
 
 ### Operation Dialogs
-Operation Selection: Users are prompted to enter whether they want to "encrypt" or "decrypt".
-File Selection: Users can browse and select the file to be processed.
-Save Location: Users can choose the directory to save the processed file.
-Key/Shift Input:
-For Caesar cipher: Users are prompted to enter the shift value.
-For Vigenère cipher: Users are prompted to enter the encryption key.     
+- Operation Selection: Users are prompted to enter whether they want to "encrypt" or "decrypt".
+- File Selection: Users can browse and select the file to be processed.
+- Save Location: Users can choose the directory to save the processed file.
+- Key/Shift Input:
+- For Caesar cipher: Users are prompted to enter the shift value.
+- For Vigenère cipher: Users are prompted to enter the encryption key.     
 
+### Functions
+- caesar_encrypt: Encrypts text using the Caesar cipher.
+- caesar_decrypt: Decrypts text using the Caesar cipher.
+- vigenere_encrypt: Encrypts text using the Vigenère cipher.
+- vigenere_decrypt: Decrypts text using the Vigenère cipher.
+- select_operation: Handles user input for selecting the operation (encrypt/decrypt) and processing the file.
+- main: Initializes the GUI and sets up the main application window.
 ### Contributors:
 - [Elma Shabani](https://github.com/ElmaShabani)
 - [Elona Fetahu](https://github.com/ElonaFetahu)
