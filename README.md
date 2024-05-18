@@ -24,6 +24,9 @@ This Python application provides a user-friendly interface for encrypting and de
 - Install the required dependencies by running `pip install -r requirements.txt.`
 - Run the main.py file.
 
+###Graphical User Interface (GUI)
+The application uses tkinter for the GUI, allowing users to easily select options and input necessary information through dialog boxes.                                                                                                                                                                                                                  
+
 ### Contributors:
 - [Elma Shabani](https://github.com/ElmaShabani)
 - [Elona Fetahu](https://github.com/ElonaFetahu)
