@@ -21,7 +21,9 @@ The application uses tkinter for the GUI, allowing users to easily select option
 
 ### Operation Dialogs
 - Operation Selection: Users are prompted to enter whether they want to "encrypt" or "decrypt".
-- File Selection: Users can browse and select the file to be processed.
+- - File Selection: Users can choose whether they have a file to process or not.
+    - If they have a file, they can browse and select it.
+    - If they don't have a file, they can click "No" and enter the text in a textbox provided by the application.
 - Save Location: Users can choose the directory to save the processed file.
 - Key/Shift Input:
   - For Caesar cipher: Users are prompted to enter the shift value.
