@@ -41,7 +41,7 @@ The application uses tkinter for the GUI, allowing users to easily select option
 - **Clone this repository to your local machine.**
   ```bash
    git clone https://github.com/elonekrasniqi/CaesarAndVigenere.git
-- Make sure you have Python installed.
+- Make sure you have Python installed on your system. If not, download and install it from the [official Python website](https://www.python.org/).
 - Install the required dependencies by running `pip install -r requirements.txt.`
 - Run the main.py file.
 
