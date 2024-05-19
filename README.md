@@ -21,7 +21,7 @@ The application uses tkinter for the GUI, allowing users to easily select option
 
 ### Operation Dialogs
 - Operation Selection: Users are prompted to enter whether they want to "encrypt" or "decrypt".
-- - File Selection: Users can choose whether they have a file to process or not.
+- File Selection: Users can choose whether they have a file to process or not.
     - If they have a file, they can browse and select it.
     - If they don't have a file, they can click "No" and enter the text in a textbox provided by the application.
 - Save Location: Users can choose the directory to save the processed file.
@@ -30,12 +30,12 @@ The application uses tkinter for the GUI, allowing users to easily select option
   - For Vigenère cipher: Users are prompted to enter the encryption key.     
 
 ### Functions
-- caesar_encrypt: Encrypts text using the Caesar cipher.
-- caesar_decrypt: Decrypts text using the Caesar cipher.
-- vigenere_encrypt: Encrypts text using the Vigenère cipher.
-- vigenere_decrypt: Decrypts text using the Vigenère cipher.
-- select_operation: Handles user input for selecting the operation (encrypt/decrypt) and processing the file.
-- main: Initializes the GUI and sets up the main application window.
+- `caesar_encrypt`: Encrypts text using the Caesar cipher.
+- `caesar_decrypt`: Decrypts text using the Caesar cipher.
+- `vigenere_encrypt`: Encrypts text using the Vigenère cipher.
+- `vigenere_decrypt`: Decrypts text using the Vigenère cipher.
+- `select_operation`: Handles user input for selecting the operation (encrypt/decrypt) and processing the file.
+- `main`: Initializes the GUI and sets up the main application window.
 
 ### How to Use
 - **Clone this repository to your local machine.**
