@@ -1,5 +1,5 @@
 # Ceasar and Vigenere
-This is a semester project developed by students at the University "Hasan Prishtina" - Faculty of Electrical and Computer Engineering, in the course "Data Security" - Prof.Blerim Rexha and Asc.Mergim Hoti.
+This is a semester project developed by students at the University "Hasan Prishtina" - Faculty of Electrical and Computer Engineering, in the course "Data Security" - Prof.Blerim Rexha and Msc.Mergim Hoti.
 
 ## Introduction
 The Caesar cipher, named after Julius Caesar, is one of the simplest and most widely known encryption techniques. It works by shifting each letter of the plaintext by a fixed number of positions down or up the alphabet.
